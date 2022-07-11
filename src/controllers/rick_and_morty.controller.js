@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const find__rick_and_morty__controller__ALL = async (req, res) => {
   const rick_and_morty__TODAS = await rick_and_morty__SERVICE.find__rick_and_morty__service__ALL();
   if (rick_and_morty__TODAS.length === 0) {
-    return res.status(404).send({ message: 'Não existe nenhuma rick_and_morty cadastrada' });
+    return res.status(404).send({ message: 'Não existe nenhuma personagem cadastrada' });
   }
   res.send(rick_and_morty__TODAS);
 };
@@ -13,7 +13,7 @@ const find__rick_and_morty__controller__BY_ID = async (req, res) => {
   const param__ID = req.params.id;
   const escolha__rick_and_morty = await rick_and_morty__SERVICE.find__rick_and_morty__service__BY_ID(param__ID);
   if (!escolha__rick_and_morty) {
-    return res.status(404).send({ message: 'rick_and_morty não encontrada' });
+    return res.status(404).send({ message: 'Personagem não encontrado' });
   }
   res.send(escolha__rick_and_morty);
 };
@@ -34,7 +34,7 @@ const update__rick_and_morty__CONTROLLER = async (req, res) => {
 const delete__rick_and_morty__CONTROLLER = async (req, res) => {
   const param__ID = req.params.id;
   await rick_and_morty__SERVICE.delete__rick_and_morty__SERVICE(param__ID);
-  res.send({ message: 'rick_and_morty deletada com sucesso!' });
+  res.send({ message: 'Personagem deletado com sucesso!' });
 };
 
 module.exports = {

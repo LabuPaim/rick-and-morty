@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 function connect__DB() {
   mongoose
-    .connect('mongodb+srv://admin:admin@rick-and-morty.45hb3.mongodb.net/?retryWrites=true&w=majority', {
+    .connect(process.env.DATABASE_URL, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
