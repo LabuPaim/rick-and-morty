@@ -10,7 +10,7 @@ const valid__ID = (req, res, next) => {
 
 const valid__OBJECT_BODY = (req, res, next) => {
   const rick_and_morty = req.body;
-  if (!rick_and_morty || !rick_and_morty.sabor || !rick_and_morty.descricao || !rick_and_morty.foto || !rick_and_morty.preco) {
+  if (!rick_and_morty || !rick_and_morty.nome || !rick_and_morty.foto) {
     return res.status(400).send({
       message: 'Você não preencheu todos os dados!',
     });

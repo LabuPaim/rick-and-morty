@@ -1,20 +1,12 @@
 const mongoose = require('mongoose');
 
 const Rick_and_morty__SCHEMA = new mongoose.Schema({
-  sabor: {
-    type: String,
-    required: true,
-  },
-  descricao: {
+  nome: {
     type: String,
     required: true,
   },
   foto: {
     type: String,
-    required: true,
-  },
-  preco: {
-    type: Number,
     required: true,
   },
 });
